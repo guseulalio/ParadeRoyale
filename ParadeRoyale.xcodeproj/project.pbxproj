@@ -13,6 +13,9 @@
 		9C93CFEB24B9E70E0099EFF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C93CFEA24B9E70E0099EFF7 /* Assets.xcassets */; };
 		9C93CFEE24B9E70E0099EFF7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C93CFED24B9E70E0099EFF7 /* Preview Assets.xcassets */; };
 		9C93CFF124B9E70E0099EFF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C93CFEF24B9E70E0099EFF7 /* LaunchScreen.storyboard */; };
+		9C93CFFA24BC29B80099EFF7 /* PlayingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C93CFF924BC29B80099EFF7 /* PlayingTable.swift */; };
+		9CD2FBBE24BEDAF500E7A456 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD2FBBD24BEDAF500E7A456 /* CardStack.swift */; };
+		9CD2FBC024BEE63F00E7A456 /* CardBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD2FBBF24BEE63F00E7A456 /* CardBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		9C93CFED24B9E70E0099EFF7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9C93CFF024B9E70E0099EFF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C93CFF224B9E70E0099EFF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C93CFF924BC29B80099EFF7 /* PlayingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingTable.swift; sourceTree = "<group>"; };
+		9CD2FBBD24BEDAF500E7A456 /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
+		9CD2FBBF24BEE63F00E7A456 /* CardBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				9C93CFE424B9E70B0099EFF7 /* AppDelegate.swift */,
 				9C93CFE624B9E70B0099EFF7 /* SceneDelegate.swift */,
 				9C93CFE824B9E70B0099EFF7 /* ContentView.swift */,
+				9C93CFF924BC29B80099EFF7 /* PlayingTable.swift */,
+				9CD2FBBD24BEDAF500E7A456 /* CardStack.swift */,
+				9CD2FBBF24BEE63F00E7A456 /* CardBox.swift */,
 				9C93CFEA24B9E70E0099EFF7 /* Assets.xcassets */,
 				9C93CFEF24B9E70E0099EFF7 /* LaunchScreen.storyboard */,
 				9C93CFF224B9E70E0099EFF7 /* Info.plist */,
@@ -147,8 +156,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C93CFE524B9E70B0099EFF7 /* AppDelegate.swift in Sources */,
+				9C93CFFA24BC29B80099EFF7 /* PlayingTable.swift in Sources */,
 				9C93CFE724B9E70B0099EFF7 /* SceneDelegate.swift in Sources */,
+				9CD2FBC024BEE63F00E7A456 /* CardBox.swift in Sources */,
 				9C93CFE924B9E70B0099EFF7 /* ContentView.swift in Sources */,
+				9CD2FBBE24BEDAF500E7A456 /* CardStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +308,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gustavoeulalio.ParadeRoyale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -316,7 +328,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gustavoeulalio.ParadeRoyale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

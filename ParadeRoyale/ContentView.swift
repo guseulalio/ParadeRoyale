@@ -9,13 +9,33 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
-    }
+	var body: some View {
+		NavigationView {
+			ZStack {
+				LinearGradient(gradient: Gradient(colors: [Color.green, Color.black]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+				VStack {
+					Text("Parade Royale Solitaire")
+						.font(Font.custom("SnellRoundhand-Black", size: 32))
+						.foregroundColor(.white)
+						.padding()
+					Spacer()
+					
+					NavigationLink(destination: PlayingTable().navigationBarTitle("")
+						.navigationBarHidden(true)) {
+						Text("Play")
+							.padding(EdgeInsets(top: 12, leading: 24, bottom: 12, trailing: 24)).background(Color.red).foregroundColor(.white).clipShape(Capsule())
+					}
+					Spacer()
+				}
+			}
+			.navigationBarTitle("")
+			.navigationBarHidden(true)
+		}
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+	static var previews: some View {
+		ContentView().previewLayout(.fixed(width: 896, height: 414))
+	}
 }
