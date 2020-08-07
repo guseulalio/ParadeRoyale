@@ -161,19 +161,19 @@ struct PlayingTable: View {
 								.background(Color.red).foregroundColor(.white)
 								.clipShape(Capsule())
 						}
-						Button(action: {
-							self.gameWon = true
-							withAnimation(.spring()) {
-								self.gameEndOpacity = 1.0
-								self.gameEndScale = 1.0
-							}
-						}) {
-							Image(systemName: "flame").frame(width: 40, height: 40)
-								.padding(.horizontal, 16)
-								.padding(.bottom, 6)
-								.background(Color.red).foregroundColor(.white)
-								.clipShape(Capsule())
-						}
+//						Button(action: {
+//							self.gameWon = true
+//							withAnimation(.spring()) {
+//								self.gameEndOpacity = 1.0
+//								self.gameEndScale = 1.0
+//							}
+//						}) {
+//							Image(systemName: "flame").frame(width: 40, height: 40)
+//								.padding(.horizontal, 16)
+//								.padding(.bottom, 6)
+//								.background(Color.red).foregroundColor(.white)
+//								.clipShape(Capsule())
+//						}
 						
 						Spacer()
 						
@@ -193,23 +193,25 @@ struct PlayingTable: View {
 						}.padding()
 					}.padding()
 				}
-				ZStack {
-					Image("boom")
-						.resizable().scaledToFit()
-						.frame(width: CGFloat(self.gameEndScale) * geo.size.height, height: CGFloat(self.gameEndScale) * geo.size.height)
-					Button(action: {
-						self.resetBoard()
-					}) {
-						ZStack {
-							Text("You\nWon!").font(Font.custom("MarkerFelt-Wide", size: 64))
-							.foregroundColor(.black)
-							Text("You\nWon!").font(Font.custom("MarkerFelt-Wide", size: 64))
-							.offset(CGSize(width: 5, height: -5))
-							.foregroundColor(.red)
+				if self.gameWon {
+					ZStack {
+						Image("boom")
+							.resizable().scaledToFit()
+							.frame(width: CGFloat(self.gameEndScale) * geo.size.height, height: CGFloat(self.gameEndScale) * geo.size.height)
+						Button(action: {
+							self.resetBoard()
+						}) {
+							ZStack {
+								Text("You\nWon!").font(Font.custom("MarkerFelt-Wide", size: 64))
+								.foregroundColor(.black)
+								Text("You\nWon!").font(Font.custom("MarkerFelt-Wide", size: 64))
+								.offset(CGSize(width: 5, height: -5))
+								.foregroundColor(.red)
+							}
 						}
 					}
+					.opacity(self.gameEndOpacity)
 				}
-				.opacity(self.gameEndOpacity)
 			}
 			.alert(isPresented: self.$showResetConfirmationAlert, content: {
 				let confirmButton = Alert.Button.default(Text("Yes"), action: self.resetBoard)
@@ -385,7 +387,7 @@ struct PlayingTable: View {
 				if !pile.isEmpty { return }
 			}
 			gameWon = true
-			withAnimation//(.easeIn(duration: 2))
+			withAnimation
 			{
 				self.gameEndOpacity = 1.0
 				self.gameEndScale = 1.0
