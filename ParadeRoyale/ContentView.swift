@@ -12,7 +12,13 @@ struct ContentView: View {
 	var body: some View {
 		NavigationView {
 			ZStack {
-				LinearGradient(gradient: Gradient(colors: [Color.green, Color.black]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+				LinearGradient(gradient:
+					Gradient(colors: [Color.green, Color.black]),
+					startPoint: .top,
+					endPoint  : .bottom
+				)
+				.edgesIgnoringSafeArea(.all)
+				
 				VStack {
 					Text("Parade Royale Solitaire")
 						.font(Font.custom("SnellRoundhand-Black", size: 32))
